@@ -41,3 +41,4 @@ Include `chef-wordpresswrapper` in your node's `run_list`:
 
 Author:: YOUR_NAME (<YOUR_EMAIL>)
 # chef-wordpresswrapper
+# Chef-Wordpresswrapper
