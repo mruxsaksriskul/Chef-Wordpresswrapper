@@ -2,15 +2,14 @@
 
 
 server {
-        listen        :80;
+        listen        :*;
         root          <%= node['nginx']['default_root'] %>;
 
         access_log <%= node['nginx']['log_dir'] %>/localhost.access.log;
         error_log <%= node['nginx']['log_dir'] %>/error.log.2;
 
-
+}
 index index.php;
-
 location / {
 try_files $uri $uri/ /index.php?$args;
 }
