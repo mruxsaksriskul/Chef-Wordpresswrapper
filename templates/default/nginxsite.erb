@@ -2,13 +2,12 @@
 
 
 server {
-        listen        :*;
+        listen        *:80;
         root          <%= node['nginx']['default_root'] %>;
 
         access_log <%= node['nginx']['log_dir'] %>/localhost.access.log;
         error_log <%= node['nginx']['log_dir'] %>/error.log.2;
 
-}
 index index.php;
 location / {
 try_files $uri $uri/ /index.php?$args;
@@ -32,4 +31,5 @@ fastcgi_pass unix:/var/run/php-fpm-www.sock;
 fastcgi_index index.php;
 #fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 fastcgi_param SCRIPT_FILENAME $request_filename;
+}
 }
